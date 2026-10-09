@@ -115,6 +115,18 @@ final class Module implements ModuleInterface
     }
 
     /**
+     * Get the path of the module.
+     *
+     * @return string The path of the module.
+     */
+    public static function getPath(): string
+    {
+        $path = plugin_dir_path(__FILE__);
+        $path = str_replace('src/', '', $path);
+        return $path;
+    }
+
+    /**
      * Initialize the Module class.
      * 
      * @return void

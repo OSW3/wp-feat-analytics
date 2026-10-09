@@ -10,6 +10,8 @@ final class Activator
 {
     public static function activate(): void
     {
+        flush_rewrite_rules();
+        
         if (get_option(Module::getId(), false)) {
             return;
         }

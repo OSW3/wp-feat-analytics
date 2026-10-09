@@ -1,0 +1,837 @@
+###############################################################################
+# SYSTEM
+###############################################################################
+
+# ======================================
+# AI AGENTS
+# ======================================
+
+.ai/
+.cursor/
+.claude/
+.roo/
+
+
+# ======================================
+# ARCHIVES
+# ======================================
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.rar
+*.7z
+
+
+# ======================================
+# BACKUPS
+# ======================================
+
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.sav
+*.tmp
+*.temp
+*.rej
+*.copy
+
+
+# ======================================
+# OPERATING SYSTEMS
+# ======================================
+
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+Icon
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.Trash-*/
+.directory
+.nfs*
+
+
+# ======================================
+# EDITORS & IDES
+# ======================================
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.rsuser
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Eclipse
+.metadata/
+.history/
+.settings/
+.project
+.classpath
+*.launch
+
+# Cloud9
+.c9/
+
+# NetBeans
+.nb-gradle/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-build/
+.nb-gradle/
+
+# CodeLite
+.codelite/
+*.tags
+*.workspace
+*.workspace.*
+*.project
+
+# Code::Blocks
+*.depend
+*.layout
+*.cbp
+
+# Vim
+*.swp
+*.swo
+*.swn
+*.swm
+*~
+
+# Emacs
+\#*\#
+.\#*
+*~
+*.elc
+auto-save-list/
+tramp
+.projectile
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Fleet
+.fleet/
+
+# Zed
+.zed/
+
+# Temporary editor files
+.note
+
+
+# ======================================
+# CERTIFICATES
+# ======================================
+
+certs/
+certificates/
+ssl/
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+*.der
+*.csr
+
+
+# ======================================
+# SECRETS & CONFIGURATION
+# ======================================
+
+# Environment files
+.env
+.env.*
+!/.env.dist
+
+# Secret directories
+secrets/
+.secret/
+.private/
+
+# Local configuration
+config.local.*
+*.local.config.*
+
+# PHP application secrets
+/config.php
+/config/secrets/prod/prod.decrypt.private.php
+/config/jwt/*.pem
+
+# direnv
+.envrc
+.direnv/
+
+# Authentication and credentials
+credentials/
+credentials.json
+service-account.json
+service-account-key.json
+
+# SSH
+id_rsa
+id_rsa.pub
+id_dsa
+id_dsa.pub
+id_ed25519
+id_ed25519.pub
+
+
+# ======================================
+# LOGS
+# ======================================
+
+# Generic logs
+*.log
+*.log.*
+logs/
+
+# Node.js package managers
+npm-debug.log*
+npm-error.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# JavaScript tools
+testem.log
+
+# WebRTC
+libpeerconnection.log
+
+# Runtime locks
+connect.lock
+
+
+# ======================================
+# RUNTIME
+# ======================================
+
+# Process files
+*.pid
+*.pid.lock
+*.lock.pid
+*.seed
+
+# Debug files
+*.trace
+*.stackdump
+
+# Runtime directories
+run/
+runtime/
+
+
+# ======================================
+# TEMPORARY FILES
+# ======================================
+
+.tmp/
+tmp/
+temp/
+
+.cache/
+.cache-loader/
+
+*.cache
+*.temp
+
+
+###############################################################################
+# PROJECT
+###############################################################################
+
+# ======================================
+# DATABASES & LOCAL DATA
+# ======================================
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+
+# Generic databases
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Database dumps
+*.sql
+*.dump
+*.dmp
+
+# Local application data
+data/
+.database/
+
+
+# ======================================
+# BUILD & DISTRIBUTION
+# ======================================
+
+# Generic build directories
+build/
+dist/
+out/
+artifacts/
+
+# Compiled libraries and bundles
+lib/
+bundles/
+
+# Frontend builds
+public/build/
+public/bundles/
+
+# Angular builds
+out-tsc/
+
+# Java and JVM builds
+target/
+
+# .NET builds
+bin/
+obj/
+
+# Bazel
+bazel-out/
+bazel-bin/
+bazel-genfiles/
+bazel-testlogs/
+
+# Generated files
+generated/
+.generated/
+
+# Rust / Tauri
+target/
+**/src-tauri/target/
+**/src-tauri/gen/
+
+# Design sources
+*.psd
+*.psb
+*.ai
+*.af
+*.afdesign
+*.afphoto
+*.afpub
+*.sketch
+*.fig
+*.xcf
+*.pdf
+*.indd
+*.tiff
+*.tif
+
+
+# ======================================
+# DEPENDENCIES
+# ======================================
+
+# Node.js
+node_modules/
+
+# PHP / Composer
+vendor/
+
+# Bower
+bower_components/
+
+# JSPM
+jspm_packages/
+
+
+# ======================================
+# TESTS, BENCHMARKS & CACHES
+# ======================================
+
+# Test coverage
+coverage/
+coverage.*
+coverage-final.json
+lcov.info
+.nyc_output/
+
+# PHPUnit
+.phpunit/
+.phpunit.cache/
+.phpunit.result.cache
+
+# PHP CS Fixer
+.php-cs-fixer.cache
+
+# Python testing and analysis
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# JavaScript and TypeScript tooling
+.eslintcache
+.stylelintcache
+.sass-cache/
+.parcel-cache/
+.rollup.cache/
+.turbo/
+
+# Playwright
+playwright-report/
+test-results/
+
+# LCOV variants
+*.lcov
+
+# Legacy TypeScript typings
+typings/
+
+# .NET tests
+TestResults/
+
+# Go tests and coverage
+*.test
+coverage.out
+coverage.html
+
+# Benchmarks
+benchmarks/
+benchmark-results/
+
+# Selenium and PhantomJS
+selenium-server-standalone-*.jar
+phantomjsdriver.log
+
+# Performance reports
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+
+# ======================================
+# DOCKER
+# ======================================
+
+# Docker Compose local files
+docker-compose.local.yml
+docker-compose.dev.yml
+docker-compose.override.yml
+
+compose.local.yaml
+compose.local.yml
+compose.dev.yaml
+compose.dev.yml
+compose.override.yaml
+compose.override.yml
+
+# Docker runtime data
+.docker/
+docker-data/
+
+# Docker environment files
+.docker.env
+docker.env
+
+
+###############################################################################
+# LANGUAGES
+###############################################################################
+
+# ======================================
+# JAVASCRIPT / TYPESCRIPT
+# ======================================
+
+# NPM
+.npm/
+.npmrc.local
+
+# PNPM
+.pnpm-store/
+.pnpm-debug.log
+
+# Yarn
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Keep Yarn releases and plugins
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Plug'n'Play
+.pnp.*
+.pnp.loader.mjs
+
+# TypeScript
+*.tsbuildinfo
+
+# Node.js REPL
+.node_repl_history
+
+# Node.js diagnostics
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Next.js
+.next/
+next-env.d.ts
+
+# Nuxt
+.nuxt/
+.output/
+
+# Svelte and SvelteKit
+.svelte-kit/
+
+# Gatsby
+.cache/
+public/
+
+# Vue
+.vuepress/dist/
+
+# Vite
+vite.config.*.timestamp-*
+vitest.config.*.timestamp-*
+
+# Storybook
+storybook-static/
+
+
+# ======================================
+# ANGULAR
+# ======================================
+
+.angular/
+
+
+# ======================================
+# MOBILE
+# ======================================
+
+# iOS
+ios/
+*.mobileprovision
+
+# Android
+android/
+
+# Android signing keys
+*.keystore
+
+
+# ======================================
+# PYTHON
+# ======================================
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Native extensions
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheels/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python version managers
+.python-version
+
+# Poetry
+poetry.toml
+
+# Pipenv
+Pipfile.local
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Django
+local_settings.py
+
+
+# ======================================
+# JAVA
+# ======================================
+
+# Compiled classes
+*.class
+
+# Packages
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Java virtual machine
+hs_err_pid*
+replay_pid*
+
+# Gradle
+.gradle/
+gradle-app.setting
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+
+# ======================================
+# .NET
+# ======================================
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.rsuser
+
+# Build results
+[Bb]uild[Ll]og.*
+*.binlog
+
+# Generated files
+Generated_Code/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# ASP.NET
+wwwroot/dist/
+wwwroot/lib/
+
+# Entity Framework
+Migrations/*.Designer.cs
+
+
+# ======================================
+# GO
+# ======================================
+
+# Compiled executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+
+# Go workspace
+go.work
+go.work.sum
+
+# Go profiling
+*.prof
+*.pprof
+
+# Go vendor directory
+# vendor/ is already ignored globally under DEPENDENCIES
+
+
+# ======================================
+# PHP
+# ======================================
+
+# Composer executable
+composer.phar
+
+# Composer authentication
+auth.json
+
+# PHP dependency analysis
+.phpstan/
+.phpstan-result-cache
+.psalm/
+.psalm-cache/
+
+# PHP CodeSniffer
+.phpcs-cache
+.phpcs-cache.json
+
+# PHP runtime
+.php-version
+
+
+###############################################################################
+# FRAMEWORKS
+###############################################################################
+
+# ======================================
+# SYMFONY
+# ======================================
+
+# Cache
+var/cache/
+
+# Logs
+var/log/
+
+# Sessions
+var/sessions/
+
+# Generated assets
+public/bundles/
+public/build/
+
+# User uploads
+public/uploads/
+
+# Symfony CLI
+.symfony.local.yaml
+
+
+# ======================================
+# WORDPRESS
+# ======================================
+
+# User uploads
+wp-content/uploads/
+
+# Cache
+wp-content/cache/
+
+# Temporary upgrades
+wp-content/upgrade/
+
+# Backups
+wp-content/backups/
+wp-content/backup-db/
+wp-content/ai1wm-backups/
+wp-content/updraft/
+
+# WordPress debug log
+wp-content/debug.log
+
+# Local WordPress configuration
+wp-config-local.php
+
+
+###############################################################################
+# INFRA
+###############################################################################
+
+# ======================================
+# TERRAFORM
+# ======================================
+
+# Terraform working directory
+.terraform/
+
+# State files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Variable files
+*.tfvars
+*.tfvars.json
+
+# Keep example variable files
+!*.tfvars.example
+!*.tfvars.json.example
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform plan files
+*.tfplan
+
+# Terraform lock information
+.terraform.tfstate.lock.info

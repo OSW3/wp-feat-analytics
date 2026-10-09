@@ -13,23 +13,35 @@
 declare(strict_types=1);
 
 if (!defined('ABSPATH')) {
-    exit;
+  exit;
 }
 
 
 // Autoload dependencies using Composer
 // --
 
-$autoload = __DIR__ . '/vendor/autoload.php';
+$autoloads = [
+  __DIR__ . '/vendor/autoload.php',
+  dirname(__DIR__, 4) . '/vendor/autoload.php',
+];
+
+$autoload = null;
+
+foreach ($autoloads as $file) {
+  if (is_file($file)) {
+    $autoload = $file;
+    break;
+  }
+}
 
 if (!is_file($autoload)) {
-    add_action('admin_notices', static function (): void {
-        echo '<div class="notice notice-error"><p>';
-        echo esc_html__(sprintf('%s: Composer autoload is missing. Run composer install in the plugin directory.', \OSW3\WpFeatAnalytics\Module::getName()), \OSW3\WpFeatAnalytics\Module::getDomain());
-        echo '</p></div>';
-    });
+  add_action('admin_notices', static function (): void {
+    echo '<div class="notice notice-error"><p>';
+    echo esc_html__(sprintf('%s: Composer autoload is missing. Run composer install in the plugin directory.', \OSW3\WpSiteCore\Module::getName()), \OSW3\WpSiteCore\Module::getDomain());
+    echo '</p></div>';
+  });
 
-    return;
+  return;
 }
 
 require_once $autoload;
@@ -40,51 +52,51 @@ require_once $autoload;
 
 // Hook d'activation
 register_activation_hook(__FILE__, static function (): void {
-    if (class_exists(\OSW3\WpFeatAnalytics\Support\Activator::class)) {
-        \OSW3\WpFeatAnalytics\Support\Activator::activate();
-    }
+  if (class_exists(\OSW3\WpFeatAnalytics\Support\Activator::class)) {
+    \OSW3\WpFeatAnalytics\Support\Activator::activate();
+  }
 });
 
 // Hook de désactivation
 register_deactivation_hook(__FILE__, static function (): void {
-    if (class_exists(\OSW3\WpFeatAnalytics\Support\Deactivator::class)) {
-        \OSW3\WpFeatAnalytics\Support\Deactivator::deactivate();
-    }
+  if (class_exists(\OSW3\WpFeatAnalytics\Support\Deactivator::class)) {
+    \OSW3\WpFeatAnalytics\Support\Deactivator::deactivate();
+  }
 });
 
 // Enregistrement de la carte d'identité auprès de wp-site-core
 add_filter('wp_site_core_register_modules', static function (array $modules): array {
-    $modules[(string) \OSW3\WpFeatAnalytics\Module::getId()] = \OSW3\WpFeatAnalytics\Module::class;
-    return $modules;
+  $modules[(string) \OSW3\WpFeatAnalytics\Module::getId()] = \OSW3\WpFeatAnalytics\Module::class;
+  return $modules;
 });
 
 // Déclaration des dépendances
 add_filter('wp_site_dependencies', static function (array $deps): array {
-    $currentPlugin = plugin_basename(__FILE__);
-    foreach (\OSW3\WpFeatAnalytics\Module::DEPENDENCIES as $pluginFile => $pluginName) {
-        $deps[$pluginFile][$currentPlugin] = \OSW3\WpFeatAnalytics\Module::getName();
-    }
-    return $deps;
+  $currentPlugin = plugin_basename(__FILE__);
+  foreach (\OSW3\WpFeatAnalytics\Module::DEPENDENCIES as $pluginFile => $pluginName) {
+    $deps[$pluginFile][$currentPlugin] = \OSW3\WpFeatAnalytics\Module::getName();
+  }
+  return $deps;
 });
 
 // Demarrage du module après le chargement de tous les plugins
 add_action('plugins_loaded', static function (): void {
 
-    // 1. Vérification que le Core est bien présent et chargé
-    if (!class_exists(\OSW3\WpSiteCore\Module::class)) {
-        add_action('admin_notices', static function (): void {
-            printf(
-                '<div class="notice notice-error"><p>%s</p></div>',
-                esc_html__(sprintf('%s a été désactivé car WP Site Core est introuvable ou inactif.', \OSW3\WpFeatAnalytics\Module::getName()), \OSW3\WpFeatAnalytics\Module::getDomain())
-            );
-        });
+  // 1. Vérification que le Core est bien présent et chargé
+  if (!class_exists(\OSW3\WpSiteCore\Module::class)) {
+    add_action('admin_notices', static function (): void {
+      printf(
+        '<div class="notice notice-error"><p>%s</p></div>',
+        esc_html__(sprintf('%s a été désactivé car WP Site Core est introuvable ou inactif.', \OSW3\WpFeatAnalytics\Module::getName()), \OSW3\WpFeatAnalytics\Module::getDomain())
+      );
+    });
 
-        // Autodésactivation de sécurité pour éviter le WSOD
-        require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        deactivate_plugins(plugin_basename(__FILE__));
-        return;
-    }
+    // Autodésactivation de sécurité pour éviter le WSOD
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    deactivate_plugins(plugin_basename(__FILE__));
+    return;
+  }
 
-    // 2. Si le Core est là, on démarre le module normalement
-    \OSW3\WpFeatAnalytics\Module::init();
+  // 2. Si le Core est là, on démarre le module normalement
+  \OSW3\WpFeatAnalytics\Module::init();
 });
